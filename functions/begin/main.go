@@ -18,6 +18,7 @@ func greetWithName(name string) string {
 }
 
 // greetWithNameAndAge returns a greeting with the name and age of the person
+// this is naked return
 func greetWithNameAndAge(name string, age int) (greeting string) {
 	greeting = "Hello, my name is " + name + " and I am " + strconv.Itoa(age) + " years old."
 	return
