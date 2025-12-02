@@ -22,6 +22,16 @@ func main() {
 
 	result := <-ch
 	fmt.Println("Result:", result)
-	// force main thread to sleep
-	// time.Sleep(100 * time.Millisecond)
+
+	ch2 := make(chan string, 2)
+	ch2 <- "James"
+	fmt.Println(<-ch2)
+	ch2 <- "Eca"
+	fmt.Println(<-ch2)
+	demo()
+}
+func demo() {
+	x := 10
+	defer fmt.Println(x) // x's value captured now
+	x = 20
 }
