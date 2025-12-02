@@ -4,6 +4,7 @@ package main
 import (
 	"fmt"
 	"runtime"
+	"strings"
 )
 
 func main() {
@@ -15,6 +16,14 @@ func main() {
 	} else if os == "windows" {
 		fmt.Println("Windows")
 	} else {
+		fmt.Printf("%s.\n", os)
+	}
+	switch os := runtime.GOOS; strings.ToLower(os) {
+	case "linux", "darwin", "unix":
+		fmt.Println("*nix variant")
+	case "windows":
+		fmt.Println("Windows")
+	default:
 		fmt.Printf("%s.\n", os)
 	}
 }
